@@ -9,4 +9,5 @@
     justify-content: center;
     transition: transform 0.2s ease-in-out;
     @include transition-scale;
+    z-index: 100;
 }

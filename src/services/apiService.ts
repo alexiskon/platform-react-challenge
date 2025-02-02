@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CatImageType, CatImageByIdType, BreedType } from "./apiTypes";
+import { CatImageType, CatImageByIdType, BreedType, FavouritesType, PostFavouriteType } from "./apiTypes";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const sub_id = import.meta.env.VITE_SUB_ID as string;
@@ -26,7 +26,7 @@ export const fetchCatDetailsById = async (id: string): Promise<CatImageByIdType>
     }
 }
 
-export const fetchFavourites = async (): Promise<any> => {
+export const fetchFavourites = async (): Promise<FavouritesType[]> => {
     try {
         const response = await axios.get(`${baseUrl}/v1/votes?sub_id=${sub_id}`, {headers});
         return response.data;
@@ -35,7 +35,7 @@ export const fetchFavourites = async (): Promise<any> => {
     }
 }
 
-export const postFavourite = async (image_id: number | string): Promise<any> => {
+export const postFavourite = async (image_id: number | string): Promise<PostFavouriteType> => {
     try {
         const payload = {image_id, sub_id, value: 1};
         const response = await axios.post(`${baseUrl}/v1/votes`, payload, {headers});
@@ -45,7 +45,7 @@ export const postFavourite = async (image_id: number | string): Promise<any> => 
     }
 }
 
-export const removeFavourite = async (image_id: number | string): Promise<any> => {
+export const removeFavourite = async (image_id: number | string): Promise<PostFavouriteType> => {
     try {
         const payload = {image_id, sub_id, value: -1};
         const response = await axios.post(`${baseUrl}/v1/votes`, payload, {headers});

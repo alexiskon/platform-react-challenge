@@ -91,7 +91,7 @@ const Home: React.FC = () => {
                 <Dialog
                     header="Cat Details"
                     style={{width: '80vw'}}
-                    breakpoints={{ '641px': '100vw' }}
+                    breakpoints={{ '641px': '90vw' }}
                     blockScroll={true}
                     visible={visibleCatModal}
                     onHide={() => closeCatModal()}

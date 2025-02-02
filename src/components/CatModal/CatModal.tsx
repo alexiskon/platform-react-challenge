@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from './CatModal.module.scss'
 import { CatImageByIdType } from "../../services/apiTypes";
 import { getFormattedBreedValues } from "../../pages/Home/Home.util";
@@ -12,8 +12,14 @@ interface CatModalProps {
 
 const CatModal: React.FC<CatModalProps> = ({cat}) => {
 
-    const { addFavorite, removeFavorite, isFavourite } = useFavorites();
+    const { favorites, addFavorite, removeFavorite, isFavourite } = useFavorites();
     const formatedBreedValues = cat.breeds ? getFormattedBreedValues(cat.breeds) : [];
+
+    const [favouriteVar, setFavouriteVar] = useState<boolean>(isFavourite(cat.id));
+
+    useEffect(() => {
+        setFavouriteVar(isFavourite((cat.id)));
+    }, [favorites])
 
     const carouselTemplate = () => {
         return (
@@ -52,6 +58,7 @@ const CatModal: React.FC<CatModalProps> = ({cat}) => {
         } else {
             addFavorite(cat.id);
         }
+        setFavouriteVar(prevVal => !prevVal);
     }
 
     return (
@@ -60,7 +67,7 @@ const CatModal: React.FC<CatModalProps> = ({cat}) => {
                 <div className={`${styles.detailsContainer__favourite}`}>
                     <i
                         onClick={() => handleFavourite()}
-                        className={`pi pi-star ${isFavourite(cat.id) ? styles.isfavouriteIcon : styles.isNotfavouriteIcon}`}
+                        className={`pi pi-star ${favouriteVar ? 'isfavouriteIcon' : styles.isNotfavouriteIcon}`}
                     >
                     </i>
                 </div>
