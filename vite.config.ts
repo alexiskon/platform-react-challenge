@@ -5,6 +5,7 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/platform-react-challenge/',
   resolve: {
     alias: {
       '@images': path.resolve(__dirname, './src/assets/images'),
