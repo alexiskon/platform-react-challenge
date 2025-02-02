@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# React TypeScript Project with Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **React TypeScript Project** bootstrapped with [Vite](https://vitejs.dev/). This project leverages TypeScript for type safety and Vite for fast and optimized builds.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Prerequisites
 
-## Expanding the ESLint configuration
+Before you start, make sure you have the following installed on your machine:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Node.js**: v20.18.2 (or higher)
+- **Package manager**: You can use one of the following:
+  - [npm](https://www.npmjs.com/) (comes with Node.js)
+  - [yarn](https://yarnpkg.com/)
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Getting Started
+
+### 1. Clone the Repository
+
+Clone the project to your local machine using the command below:
+
+```bash
+git clone https://github.com/alexiskon/platform-react-challenge.git
+cd platform-react-challenge
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Once inside the project folder, install the dependencies using one of the following commands:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+- Using **npm**:
+
+  ```bash
+  npm install
+  ```
+
+- Using **yarn**:
+
+  ```bash
+  yarn install
+  ```
+
+## ⚙️ Environment Variables
+
+To configure your project, create a `.env` file in the root directory and add the following environment variables:
+
+```env
+VITE_BASE_URL=https://api.thecatapi.com
+VITE_SUB_ID=your-sub-id
+VITE_API_KEY=your-api-key
 ```
+
+---
+
+### 3. Start the Development Server
+
+After the dependencies are installed, start the development server:
+
+```bash
+npm run dev
+```
+
+This will launch the project on your local server, typically accessible at [http://localhost:5173/](http://localhost:5173/).
+
+---
