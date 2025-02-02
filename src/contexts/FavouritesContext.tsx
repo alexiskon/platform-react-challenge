@@ -43,7 +43,6 @@ export const FavoritesProvider: React.FC<{ children: ReactNode }> = ({ children 
     };
 
     const isFavourite = (imageId: number | string): boolean => {
-        console.log(favorites)
         if (favorites) {
             const fav = favorites.find(x => x.image_id === imageId);
             return fav ? fav.value === 1 : false;

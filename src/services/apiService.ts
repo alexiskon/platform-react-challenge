@@ -64,7 +64,7 @@ export const fetchBreeds = async (): Promise<BreedType[]> => {
     }
 }
 
-export const fetchBreedImages = async (breedId: string): Promise<BreedType[]> => {
+export const fetchBreedImages = async (breedId: string): Promise<CatImageByIdType[]> => {
     try {
         const response = await axios.get(`${baseUrl}/v1/images/search?breed_ids=${breedId}`, {headers});
         return response.data;

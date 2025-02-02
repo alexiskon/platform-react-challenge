@@ -6,7 +6,6 @@ import CatCard from "../../components/CatCard/CatCard";
 const Favourites: React.FC = () => {
     
     const { favorites, removeFavorite } = useFavorites();
-    console.log(favorites)
 
     return (
         <>
