@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
   // For production wrap <BrowserRouter> with <StrictMode>
-  <BrowserRouter basename="/platform-react-challenge">
+  <BrowserRouter>
     <App />
   </BrowserRouter>
 )
