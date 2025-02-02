@@ -1,0 +1,18 @@
+.ballContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+  
+.ball {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: #cd86a7;
+    transition: background-color 0.3s ease;
+}
+  
+.ball.active {
+    background-color: var(--brand-color);
+}

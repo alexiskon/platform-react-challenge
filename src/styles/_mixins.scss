@@ -1,0 +1,7 @@
+@mixin transition-scale($duration: 0.2s, $timing: ease-in-out, $scale: 1.1) {
+    transition: transform $duration $timing;
+
+    &:hover {
+      transform: scale($scale);
+    }
+}

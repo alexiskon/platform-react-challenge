@@ -1,0 +1,12 @@
+.ScrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    border: 3px solid var(--brand-color);
+    border-radius: 100%;
+    padding: 5px;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+    @include transition-scale;
+}
